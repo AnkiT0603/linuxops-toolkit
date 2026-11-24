@@ -1,0 +1,7 @@
+# Never commit logs, archives or local secrets
+*.log
+*.gz
+*.tar.gz
+*.tmp
+.env
+.DS_Store

@@ -1,0 +1,11 @@
+[Unit]
+Description=LinuxOps system health check
+Documentation=file:///opt/linuxops/README.md
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/linuxops/scripts/health_check.sh
+# Exit code 1 means "problems found", not "the check itself failed"
+SuccessExitStatus=1
+Nice=10

@@ -1,0 +1,8 @@
+# /etc/cron.d/linuxops - LinuxOps scheduled jobs (installed by install.sh)
+# Files in /etc/cron.d have an extra USER field after the five time fields.
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# m    h  dom mon dow  user  command
+*/15   *  *   *   *    root  /opt/linuxops/scripts/disk_monitor.sh >> /var/log/linuxops/cron.log 2>&1
+30     2  *   *   *    root  /opt/linuxops/scripts/log_cleanup.sh >> /var/log/linuxops/cron.log 2>&1
